@@ -1,4 +1,6 @@
 use clap::Subcommand;
 
 #[derive(Subcommand)]
-pub enum Commands {}
+pub enum Commands {
+    List { file: String },
+}
