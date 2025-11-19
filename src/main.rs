@@ -2,7 +2,7 @@ mod commands;
 
 use std::{
     fs::File,
-    io::{BufRead, BufReader},
+    io::{BufRead, BufReader, Read},
 };
 
 use clap::Parser;
@@ -29,6 +29,19 @@ fn main() {
             }
 
             println!("{} {}", lines_count, file);
+        }
+        Commands::Count { file } => {
+            let file_open = File::open(&file).expect("Unable to open file");
+            let mut content = String::new();
+            let mut buffer_reader = BufReader::new(file_open);
+
+            println!(
+                "{:?} {}",
+                buffer_reader
+                    .read_to_string(&mut content)
+                    .expect("Failed to get file bytes"),
+                file
+            )
         }
     }
 }
