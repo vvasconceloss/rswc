@@ -1,0 +1,9 @@
+[package]
+name = "rswc"
+version = "0.1.0"
+edition = "2024"
+description = "A version of the Unix command line tool wc"
+authors = ["Victor Vasconcelos <vvasconcelos.dev@gmail.com>"]
+
+[dependencies]
+clap = { version = "4.5.50", features = ["derive"] }
