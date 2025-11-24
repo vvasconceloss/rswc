@@ -6,6 +6,7 @@ Minimal clone of the Unix `wc` tool.
 
 - Line counting
 - Byte counting
+- Word counting
 - Simple subcommand interface using `clap`
 
 ## Usage
@@ -13,6 +14,7 @@ Minimal clone of the Unix `wc` tool.
 ```bash
 rswc list <file>
 rswc count <file>
+rswc words <file>
 ```
 
 ## Build
@@ -26,4 +28,5 @@ cargo build --release
 ```bash
 cargo run -- list <file>
 cargo run -- count <file>
+cargo run -- words <file>
 ```
