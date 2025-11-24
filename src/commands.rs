@@ -4,4 +4,5 @@ use clap::Subcommand;
 pub enum Commands {
     List { file: String },
     Count { file: String },
+    Words { file: String },
 }
