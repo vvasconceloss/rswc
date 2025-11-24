@@ -43,5 +43,17 @@ fn main() {
                 file
             )
         }
+        Commands::Words { file } => {
+            let mut words_count: u8 = 0;
+            let file_buffer = BufReader::new(File::open(&file).expect("Unable to open file"));
+
+            for line in file_buffer.lines() {
+                for _ in line.unwrap().split_whitespace() {
+                    words_count += 1;
+                }
+            }
+
+            println!("{} {}", words_count, file);
+        }
     }
 }
